@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdbool.h>
+
+bool arm(long long int N){
+
+    long long int n=N, r=0, s=0;
+    int d=0;
+     while(n!=0){
+        n/=10;
+        d++;
+    }
+    n=N;
+    while(n!=0){
+        r=n%10;
+        s+=pow(r,d);
+        n/=10;
+    }
+    return N==s;
+    
+}
+
+int main() {
+
+    long long int x,y;
+    scanf("%lld %lld", &x, &y);
+
+    int c=0;
+    for(int i=x; i<=y; i++){
+
+        if(arm(i)==1)
+        c++;
+    }
+
+    printf("%d", c);
+    return 0;
+}
