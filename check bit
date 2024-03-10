@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int check_bit(int n, int i){
+    return (n & (1<<i))!=0;
+};
+
+int main() {
+    int i;
+    long long int n;
+    scanf("%lld %d", &n, &i );
+    
+    if(check_bit(n,i))
+    printf("true");
+
+    else
+    printf("false");
+    
+    }
+
